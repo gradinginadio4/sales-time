@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Time | Homieux Media</title>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Epilogue', sans-serif;
+            background: #FFFFFF;
+            color: #000887;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 80px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #E5E5E5;
+        }
+        
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #000887;
+        }
+        
+        .calendly-link {
+            color: #ED51C2;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .calendly-link:hover {
+            text-decoration: underline;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            line-height: 1.2;
+        }
+        
+        .simple-input {
+            background: #F8F8F8;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .input-label {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+        
+        .slider-container {
+            margin: 30px 0;
+        }
+        
+        .slider {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: #E5E5E5;
+            outline: none;
+            -webkit-appearance: none;
+        }
+        
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #ED51C2;
+            cursor: pointer;
+        }
+        
+        .slider-value {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #000887;
+            margin: 20px 0;
+        }
+        
+        .insight-result {
+            background: #FFFFFF;
+            border-radius: 8px;
+            padding: 30px;
+            margin-top: 30px;
+            border: 1px solid #E5E5E5;
+        }
+        
+        .result-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #000887;
+            margin-bottom: 10px;
+        }
+        
+        .result-label {
+            color: #666;
+            font-size: 1rem;
+        }
+        
+        .context-text {
+            font-size: 1.1rem;
+            color: #555;
+            margin: 40px 0;
+            line-height: 1.7;
+        }
+        
+        .examples-section {
+            margin-top: 60px;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+        
+        .example-card {
+            background: #F8F8F8;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .example-location {
+            color: #ED51C2;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+        }
+        
+        .example-text {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
+        .cta-section {
+            margin-top: 60px;
+            text-align: center;
+            padding: 40px;
+            background: #F8F8F8;
+            border-radius: 12px;
+        }
+        
+        .cta-text {
+            font-size: 1.25rem;
+            margin-bottom: 25px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #ED51C2;
+            color: #FFFFFF;
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        
+        .cta-button:hover {
+            background: #D945A8;
+        }
+        
+        footer {
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid #E5E5E5;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .email-link {
+            color: #000887;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 600px) {
+            h1 { font-size: 1.75rem; }
+            .result-number { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">Homieux Media</div>
+            <a href="https://calendly.com/homieuxmedia/discovery-call-gratuit-discutons-de-vos-defis" class="calendly-link">Schedule a conversation</a>
+        </header>
+        
+        <h1>Sales Team Time</h1>
+        
+        <div class="simple-input">
+            <p class="input-label">How many field sales representatives does your company have?</p>
+            
+            <div class="slider-container">
+                <input type="range" min="1" max="20" value="5" class="slider" id="repSlider">
+                <div class="slider-value" id="repValue">5</div>
+            </div>
+            
+            <div class="insight-result">
+                <div class="result-number" id="hourResult">~1,100</div>
+                <div class="result-label">hours annually per rep on unqualified prospecting</div>
+            </div>
+        </div>
+        
+        <p class="context-text">
+            This pattern is common in equipment distribution, where inbound lead flow varies and 
+            reps spend significant time identifying and qualifying opportunities. Some companies 
+            have found ways to focus this time more effectively.
+        </p>
+        
+        <div class="examples-section">
+            <h2 class="section-title">How Some Companies Reclaimed Time</h2>
+            
+            <div class="example-card">
+                <div class="example-location">Brussels-based distributor, 60 employees</div>
+                <div class="example-text">
+                    Implemented construction permit alerts. Sales team now contacts projects 
+                    that have already filed permits, rather than searching broadly. Reclaimed 
+                    12+ hours weekly per rep.
+                </div>
+            </div>
+            
+            <div class="example-card">
+                <div class="example-location">Antwerp-based distributor, 45 employees</div>
+                <div class="example-text">
+                    Used LinkedIn to identify job changes among chefs and hotel managers—moments 
+                    when new vendor evaluations typically begin. Warm outreach replaced cold calling.
+                </div>
+            </div>
+            
+            <div class="example-card">
+                <div class="example-location">Ghent-based distributor, 80 employees</div>
+                <div class="example-text">
+                    Added a brief qualification step before first meetings. Reps now engage 
+                    only with prospects who have confirmed budget and timeline. Quote-to-close 
+                    rate improved significantly.
+                </div>
+            </div>
+        </div>
+        
+        <div class="cta-section">
+            <p class="cta-text">Interested in discussing your team's focus?</p>
+            <a href="https://calendly.com/homieuxmedia/discovery-call-gratuit-discutons-de-vos-defis" class="cta-button">Let's talk about your situation</a>
+        </div>
+        
+        <footer>
+            <p>Questions? Reach us at <a href="mailto:info@homieuxmedia.com" class="email-link">info@homieuxmedia.com</a></p>
+            <p style="margin-top: 10px; font-size: 0.8rem;">&copy; 2026 Homieux Media</p>
+        </footer>
+    </div>
+    
+    <script>
+        const slider = document.getElementById('repSlider');
+        const repValue = document.getElementById('repValue');
+        const hourResult = document.getElementById('hourResult');
+        
+        function updateValue() {
+            const reps = parseInt(slider.value);
+            repValue.textContent = reps;
+            
+            // Simple calculation: ~10 hours/week * 48 weeks * reps
+            const hours = Math.round(reps * 10 * 48);
+            hourResult.textContent = '~' + hours.toLocaleString();
+        }
+        
+        slider.addEventListener('input', updateValue);
+    </script>
+</body>
+</html>
